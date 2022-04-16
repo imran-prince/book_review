@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Register = () => {
     return (
         <>
-            <Form className='w-50 m-auto text-center'>
+            <Form className='w-50 m-auto  '>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" />
@@ -21,8 +21,8 @@ const Register = () => {
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
-                <Button variant="primary" type="submit">
-                    Log-in
+                <Button  variant="primary" type="submit">
+                 Register
                 </Button>
             </Form>
             <div className='w-50 m-auto  '>
