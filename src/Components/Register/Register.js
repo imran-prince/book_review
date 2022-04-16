@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-const Login = () => {
+const Register = () => {
     return (
         <>
             <Form className='w-50 m-auto text-center'>
@@ -26,11 +26,10 @@ const Login = () => {
                 </Button>
             </Form>
             <div className='w-50 m-auto  '>
-                <p>Create New User <Link to='/register'>Register</Link> </p>
+                <p>Already have an account <Link to='/login'>Login</Link> </p>
             </div>
         </>
-
     );
 };
 
-export default Login;
+export default Register;
