@@ -1,10 +1,11 @@
-import React from 'react';
-import useDataLoad from '../../hooks/useDataLoad';
+import React, { useContext } from 'react';
+import { LoadContext } from '../../App';
+ 
 import SingleService from '../SignleService/SingleService';
 
 const Service = () => {
-    const [services] = useDataLoad()
-
+    const [services] = useContext(LoadContext)
+ 
 
     return (
 

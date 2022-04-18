@@ -3,34 +3,16 @@
   {
     "id": 3,
     "name": "Food & Drink Photography ",
-    "reviews":"I really enjoyed 'Ghost Fleet', and was looking forward to another novel in that vein. This was by far one of the worst techno-thrillers I've ever read. Shoddy characters  the book lacks convincing technical detail, and is horribly inconsistent with the technologies that it portrays.",
+    "reviews":"Food & drink photography can be editorial (like cookbooks and magazines) and commercial (like packaging and advertising). This specialty can overlap other specialties, such as travel photography, product photography, restaurant, and hospitality, or even portraiture of the chef, staff, and customer base.",
     "price":1200,
     "img": "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8Zm9vZCUyMGFuZCUyMGRyaW5rfGVufDB8fDB8fA%3D%3D&w=1000&q=80"
-    
-  },
-  {
-    "id": 4,
-    "price":1800,
-    "name": "Advertising Photography.",
-    "reviews":"This book seems to be trying to achieve two things. The first is to be a 'wake-up' call to the general public about how unprepared America is for a confrontation with a technologically superior, determined China, its probably designed to help stimulate thought about ",
-     
-    "img": "http://clocknews24.com/wp-content/uploads/2021/05/advertising-photography.jpg"
-    
-  },
-  {
-    "id": 5,
-    "price":1300,
-    "name": "Event Photography.",
-    "reviews":"I've read negative comments on this book, and agree some of those points are valid, and yet I give this book five stars and urge voters and those in positions to set policy to read it.The gist and ultimate message of the book is what we should take away.",
-   
-    "img": " https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
     
   },
   {
     "id": 6,
     "price":1900,
     "name": "Cookbook Photography",
-    "reviews":"After reading this book, I had to look up who Adm Stavridis actually was and as hard it is to believe he was a NATO Supreme Allied Commander Europe, which frankly explains the European reluctance to support NATO. ",
+    "reviews":"The Photographer’s Cookbook is exactly what the doctor ordered for any photographer curious about some of the favorite dishes made by the greats. For many of you, your passion and hobby is photography. ",
    
     "img": "https://asweetspoonful.com/wp-content/uploads/2013/03/2013-03-13-14.34.56.jpg"
     
@@ -39,19 +21,30 @@
     "id": 7,
     "price":1800,
     "name": "restaurant & Hospitality Photography",
-    "reviews":"The Chinese are technologically advanced to the point that it can remotely hijack an F-35 in mid-air and block all communications between US ships that can see each other, but its Minister of Defense is detestably fat and can't afford a tailor to make him a fit uniform;",
+    "reviews":"The guest rooms and suites are spacious with high ceilings, large windows and a decidedly residential feel, providing a comfortable respite from the thought-provoking art and activity that fills the museum galleries;",
   
     "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHG0QWBnFrQFCR5qm75_30h_RsWT6fFbBOCw&usqp=CAU"
     
   },
   {
-    "id": 8,
-    "price":2500,
-    "name": "Erdogan",
- 
-    "reviews":" saw the authors in an interview and was immedatly interested in this book. I am 60 and don't often read novels for pleasure, but after reading the sample I was enjoying the book. Howver, From the sample and into the book the use of Chirst and variants to curse were all too common. I am sorry to see that. I really wrestled with wanting to contiue ",
-    "img": "https://idsb.tmgrup.com.tr/ly/uploads/images/2021/11/22/161523.jpg"
+    "id": 4,
+    "price":1800,
+    "name": "Advertising Photography.",
+    "reviews":"Over the years, photos have been used in advertisements. Photography is believed to have many impacts on advertising efforts. So as to discuss this topic, this paper shall: trace the development of photography on advertising; discuss the positive impacts of photography on advertising; and discuss the negative impacts of photography on advertising. ",
+     
+    "img": "http://clocknews24.com/wp-content/uploads/2021/05/advertising-photography.jpg"
+    
+  },
+  {
+    "id": 5,
+    "price":1300,
+    "name": "Event Photography.",
+    "reviews":"Corporate event photography’s essential unteachable skill is standard for all event photography. Event photographers are selected for their ability to capture life as it unfolds, as there are no second chances.",
+   
+    "img": " https://images.pexels.com/photos/2608517/pexels-photo-2608517.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
     
   }
+  
+  
    
  ]

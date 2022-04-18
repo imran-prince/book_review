@@ -8,14 +8,17 @@ const SingleService = ({ service }) => {
     return (
         <div>
             <Col>
-                <Card>
+                <Card className='text-center'>
                     <Card.Img variant="top" src={img} />
                     <Card.Body>
-                        <Card.Title>{name}</Card.Title>
+                        <Card.Title>Name: {name}</Card.Title>
                         <Card.Text>
                              Price: $ {price}
                         </Card.Text>
-                        <Button onClick={()=>{navigate('/checkout')}} variant="primary">Check-Out</Button>
+                        <Card.Text>
+                             <span style={{color:'red'}}>Short Description:</span> <small>{reviews}</small>
+                        </Card.Text>
+                        <Button onClick={()=>{navigate(`/checkout/${id}`)}} variant="primary">Check-Out</Button>
                     </Card.Body>
 
                 </Card>

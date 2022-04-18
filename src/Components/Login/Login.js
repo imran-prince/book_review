@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import {useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
-import Loading from '../Loading/Loading';
+ 
+
 
 
 const Login = () => {
-    const location=useLocation()
-    const navigate=useNavigate()
+  
+    const location = useLocation()
+    const navigate = useNavigate()
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [
@@ -16,29 +18,26 @@ const Login = () => {
         user,
         loading,
         error,
-      ] = useSignInWithEmailAndPassword(auth);
-      const emailHandaler = (e) => {
+    ] = useSignInWithEmailAndPassword(auth);
+    const emailHandaler = (e) => {
         setEmail(e.target.value)
 
     }
-    if(loading)
-    {
-        return <Loading></Loading>
-    }
-    
+
+
     const passHandaler = (e) => {
         setPass(e.target.value)
 
     }
-    const loginHandaler=(e)=>{
+    const loginHandaler = (e) => {
         e.preventDefault()
-        signInWithEmailAndPassword(email,pass)
+        signInWithEmailAndPassword(email, pass)
     }
-    
- 
+  
+
+
     const from = location.state?.from?.pathname || "/";
-    if(user)
-    {
+    if (user) {
         navigate(from, { replace: true });
     }
 
@@ -58,16 +57,21 @@ const Login = () => {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" required onBlur={passHandaler} placeholder="Password" />
                 </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
+
+
+                {
+                    user ? <p style={{ color: 'green' }}>Login Successfullay.</p> :
+                        <p style={{ color: "red" }}>{error?.message}</p>
+                }
                 <Button variant="primary" type="submit">
                     Log-in
                 </Button>
             </Form>
             <div className='w-50 m-auto  '>
-                <p>Create New User <Link to='/register'>Register</Link> </p>
+                <p>Create New User <Link style={{ textDecoration: 'none', color: 'blue' }} to='/register'>Register</Link> </p>
             </div>
+          
+            
         </>
 
     );
