@@ -7,7 +7,7 @@ import Loading from '../Loading/Loading';
 
 const Register = () => {
     const navigate=useNavigate()
-    const [ createUserWithEmailAndPassword, user,error,loading ] = useCreateUserWithEmailAndPassword(auth);
+    const [ createUserWithEmailAndPassword, user,loading ] = useCreateUserWithEmailAndPassword(auth);
     const[name,setName]=useState('')
     const[email,setEmail]=useState('')
     const [customerror,setCustomerror]=useState('')
