@@ -1,6 +1,13 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
 
+import baner1 from '../../images/baner1.jpg'
+import baner2 from '../../images/baner2.jpg'
+import baner3 from '../../images/baner3.jpg'
+
+ 
+ 
+
 const Baner = () => {
     return (
         <div>
@@ -8,7 +15,7 @@ const Baner = () => {
                 <Carousel.Item>
                     <img  
                         className="d-block w-100"
-                        src="  https://dvyvvujm9h0uq.cloudfront.net/com/articles/1515135672-shutterstock_284581649.jpg"
+                        src={baner1}
                         alt="First slide"
                     />
                     <Carousel.Caption>
@@ -19,8 +26,9 @@ const Baner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO-OJrNIPZkfOsqoQrsz6lVzRl3lzqhX0mrQ&usqp=CAU"
+                        src={baner2}
                         alt="Second slide"
+                        
                     />
 
                     <Carousel.Caption>
@@ -31,7 +39,7 @@ const Baner = () => {
                 <Carousel.Item>
                     <img
                         className="d-block w-100"
-                        src="https://i.ytimg.com/vi/BEm8MzrdkJ0/maxresdefault.jpg "
+                        src={baner3}
                         alt="Third slide"
                     />
 
