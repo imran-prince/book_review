@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth';
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useLocation } from 'react-router-dom';
 import { auth } from '../../firebase.init';
  
 import CustomLink from '../CustomLink/CustomLink';
@@ -12,10 +13,11 @@ const Header = () => {
     const signoutHandaler=()=>{
         signOut(auth)
     }
+    const location=useLocation()
     return (
         <Navbar collapseOnSelect expand="lg"  className='shadow-lg' variant="dark" sticky='top'>
             <Container>
-                <Navbar.Brand  as={CustomLink} to="/">React-Bootstrap</Navbar.Brand>
+                <Navbar.Brand  as={CustomLink} to="/">Photographer</Navbar.Brand>
           
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">

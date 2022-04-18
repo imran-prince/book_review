@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import {Link, useNavigate } from 'react-router-dom';
- 
+import { Link, useNavigate } from 'react-router-dom';
+
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 
 import { auth } from '../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import { toast, ToastContainer } from 'react-toastify';
 
 const NewRegister = () => {
- 
+
     const [email, setEmail] = useState('')
     const [pass, setPass] = useState('')
     const [name, setName] = useState('')
@@ -20,8 +21,8 @@ const NewRegister = () => {
         user,
         loading,
         error,
-    ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
-     
+    ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+
     const emailHandaler = (e) => {
         setEmail(e.target.value)
 
@@ -43,28 +44,35 @@ const NewRegister = () => {
 
     const registerHandaler = (e) => {
         e.preventDefault()
-        createUserWithEmailAndPassword(email, pass)
+        if (pass !== cpass) {
+            toast('Password didnt match')
+        }
+        else {
+            createUserWithEmailAndPassword(email, pass)
+            toast('sent emial varifaction')
+        }
     }
-    
-   
-   
+
+
+
     if (user) {
         navigate('/')
     }
     return (
         <>
+         
             <div className='container w-50 m-auto  my-5'>
-                <h1 className='text-center text-primary mb-3'>Register </h1>
+                <h1 className='text-center text-primary mb-3'>New Account Create </h1>
                 <Form onSubmit={registerHandaler}>
                     <Form.Group className="mb-3" controlId="formBasicName">
                         <Form.Label>Your Name</Form.Label>
                         <Form.Control type="text" placeholder="imran" required onBlur={nameHandaler} />
-                         
+
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="formBasicEmail">
                         <Form.Label>Email address</Form.Label>
                         <Form.Control type="email" placeholder="Enter email" required onBlur={emailHandaler} />
-                         
+
                     </Form.Group>
 
                     <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -86,24 +94,25 @@ const NewRegister = () => {
                         Register
                     </Button>
                     <p className='mt-3'>Already have an Account <Link style={{ textDecoration: 'none', colo: 'blue' }} to='/login'>Login</Link></p>
-                       
+
                 </Form>
-                
+
 
 
             </div>
-            
+
             <div className='d-flex w-50 m-auto align-items-center'>
                 <div style={{ height: '1px' }} className='bg-primary w-100'></div>
                 <p className='mt-2 px-2'>or</p>
                 <div style={{ height: '1px' }} className='bg-primary w-100'></div>
             </div>
             <SocialLogin></SocialLogin>
+            <ToastContainer></ToastContainer>
 
         </>
     );
 };
 
- 
+
 
 export default NewRegister;

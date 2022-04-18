@@ -3,11 +3,17 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithEmailAndPassword, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
-import Loading from '../Loading/Loading';
+import { ToastContainer, toast } from 'react-toastify';
+import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
+
+
+import 'react-toastify/dist/ReactToastify.css';
+
+// import Loading from '../Loading/Loading';
 import SocialLogin from '../SocialLogin/SocialLogin';
-import { sendPasswordResetEmail } from 'firebase/auth';
+// import { sendPasswordResetEmail } from 'firebase/auth';
 const Login = () => {
-    const [signInWithGithub] = useSignInWithGithub(auth);
+    const [sendPasswordResetEmail] = useSendPasswordResetEmail(auth);
     const location = useLocation()
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
@@ -22,10 +28,10 @@ const Login = () => {
         setEmail(e.target.value)
 
     }
-    const resetPasswordHandaler=()=>{
-        sendPasswordResetEmail(email)
-        alert('sent  mail')
-    }
+    // const resetPasswordHandaler=()=>{
+    //     sendPasswordResetEmail(email)
+    //     alert('sent  mail')
+    // }
 
 
     const passHandaler = (e) => {
@@ -36,19 +42,30 @@ const Login = () => {
         e.preventDefault()
         signInWithEmailAndPassword(email, pass)
     }
-  
+
 
 
     const from = location.state?.from?.pathname || "/";
     if (user) {
         navigate(from, { replace: true });
     }
-    
-    
+    const resetPassword = () => {
+        if (email) {
+            sendPasswordResetEmail(email)
+            toast('sent email')
+        }
+        else{
+            toast("please enter your email address")
+        }
+
+    }
+
+
 
 
     return (
         <>
+          <h1 className='text-center my-2'>Log in informtion</h1>
             <Form onSubmit={loginHandaler} className='w-50 m-auto text-center'>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -74,7 +91,8 @@ const Login = () => {
             </Form>
             <div className='w-50 m-auto  '>
                 <p>Create New User <Link style={{ textDecoration: 'none', color: 'blue' }} to='/newregister'>Register</Link> </p>
-                
+                <p>Forgot Password ?<button className='btn btn-outline-none text-primary' onClick={resetPassword}>Reset Password</button></p>
+
             </div>
             <div className='d-flex w-50 m-auto align-items-center'>
                 <div style={{ height: '1px' }} className='bg-primary w-100'></div>
@@ -82,8 +100,9 @@ const Login = () => {
                 <div style={{ height: '1px' }} className='bg-primary w-100'></div>
             </div>
             <SocialLogin></SocialLogin>
-          
-            
+            <ToastContainer />
+
+
         </>
 
     );

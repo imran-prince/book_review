@@ -14,7 +14,7 @@ const SocialLogin = () => {
     }
     return (
         <div>
-            <div className='w-50 m-auto rounded-5'>
+            <div className='w-50 m-auto rounded-5 my-3'>
                 <button onClick={()=>signInWithGoogle()} bg="info" type="submit" className='d-block w-50 mx-auto'>
                     <FcGoogle size={35}></FcGoogle> Google Sign-in
                 </button>
