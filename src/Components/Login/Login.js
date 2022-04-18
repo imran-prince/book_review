@@ -44,10 +44,7 @@ const Login = () => {
         navigate(from, { replace: true });
     }
     
-    if(user)
-    {
-        return <Loading/>
-    }
+    
 
 
     return (
@@ -77,9 +74,7 @@ const Login = () => {
             </Form>
             <div className='w-50 m-auto  '>
                 <p>Create New User <Link style={{ textDecoration: 'none', color: 'blue' }} to='/newregister'>Register</Link> </p>
-                {/* <p>
-                    Forgot Password <button className='btn btn-outline-none ' style={{color:'red'}} onClick={resetPasswordHandaler}>Forgot Password</button>
-                </p> */}
+                
             </div>
             <div className='d-flex w-50 m-auto align-items-center'>
                 <div style={{ height: '1px' }} className='bg-primary w-100'></div>

@@ -13,7 +13,7 @@ const Header = () => {
         signOut(auth)
     }
     return (
-        <Navbar collapseOnSelect expand="lg" bg="primary" variant="dark" sticky='top'>
+        <Navbar collapseOnSelect expand="lg"  className='shadow-lg' variant="dark" sticky='top'>
             <Container>
                 <Navbar.Brand  as={CustomLink} to="/">React-Bootstrap</Navbar.Brand>
           
