@@ -1,9 +1,11 @@
 import React from 'react';
+import useDataLoad from '../../hooks/useDataLoad';
 
 const CheckOut = () => {
+    const[s]=useDataLoad()
     return (
         <div>
-            chekout
+            chekout {s.length}
         </div>
     );
 };
