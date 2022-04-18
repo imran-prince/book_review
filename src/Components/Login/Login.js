@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { Button, Form } from 'react-bootstrap';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword, useSignInWithGithub } from 'react-firebase-hooks/auth';
 import { auth } from '../../firebase.init';
- 
-
-
-
+import Loading from '../Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
+import { sendPasswordResetEmail } from 'firebase/auth';
 const Login = () => {
-  
+    const [signInWithGithub] = useSignInWithGithub(auth);
     const location = useLocation()
     const navigate = useNavigate()
     const [email, setEmail] = useState('')
@@ -22,6 +21,10 @@ const Login = () => {
     const emailHandaler = (e) => {
         setEmail(e.target.value)
 
+    }
+    const resetPasswordHandaler=()=>{
+        sendPasswordResetEmail(email)
+        alert('sent  mail')
     }
 
 
@@ -39,6 +42,11 @@ const Login = () => {
     const from = location.state?.from?.pathname || "/";
     if (user) {
         navigate(from, { replace: true });
+    }
+    
+    if(user)
+    {
+        return <Loading/>
     }
 
 
@@ -68,8 +76,17 @@ const Login = () => {
                 </Button>
             </Form>
             <div className='w-50 m-auto  '>
-                <p>Create New User <Link style={{ textDecoration: 'none', color: 'blue' }} to='/register'>Register</Link> </p>
+                <p>Create New User <Link style={{ textDecoration: 'none', color: 'blue' }} to='/newregister'>Register</Link> </p>
+                {/* <p>
+                    Forgot Password <button className='btn btn-outline-none ' style={{color:'red'}} onClick={resetPasswordHandaler}>Forgot Password</button>
+                </p> */}
             </div>
+            <div className='d-flex w-50 m-auto align-items-center'>
+                <div style={{ height: '1px' }} className='bg-primary w-100'></div>
+                <p className='mt-2 px-2'>or</p>
+                <div style={{ height: '1px' }} className='bg-primary w-100'></div>
+            </div>
+            <SocialLogin></SocialLogin>
           
             
         </>

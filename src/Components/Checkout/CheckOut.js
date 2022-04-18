@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate, useParams } from 'react-router-dom';
 import { LoadContext } from '../../App';
 import { auth } from '../../firebase.init';
+import Loading from '../Loading/Loading';
 
 
 const CheckOut = () => {
@@ -18,6 +19,7 @@ const CheckOut = () => {
         navigate(`/booking`)
         
     }
+   
 
 
     return (

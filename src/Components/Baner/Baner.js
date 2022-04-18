@@ -19,8 +19,8 @@ const Baner = () => {
                         alt="First slide"
                     />
                     <Carousel.Caption>
-                        <h3>First slide label</h3>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                        <h3>I am shooter</h3>
+                        <p>Actually i like event photoshoot</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -32,8 +32,8 @@ const Baner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                        <h3>Educational spot</h3>
+                        <p>I like educational photoshoot.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
                 <Carousel.Item>
@@ -44,8 +44,8 @@ const Baner = () => {
                     />
 
                     <Carousel.Caption>
-                        <h3>Third slide label</h3>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                        <h3>clear understand camera lence</h3>
+                        <p>I like action photoshoot.</p>
                     </Carousel.Caption>
                 </Carousel.Item>
             </Carousel>
